@@ -67,7 +67,7 @@ userInput.addEventListener(
           }
         })
         .catch(error => {
-          Notiflix.Notify.failure(error.message);
+          Notiflix.Notify.failure(error.message); 
         });
     } else {
       countryList.innerHTML = '';
