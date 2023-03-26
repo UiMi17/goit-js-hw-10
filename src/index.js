@@ -59,7 +59,7 @@ userInput.addEventListener(
             });
             countryInfoBox.innerHTML = countryInfoTemplate.join('');
 
-            if (userInput.value.toLowerCase() === "armenia" || "arm") {
+            if (userInput.value.toLowerCase() === "armenia") {
                 Notiflix.Notify.warning("Hello, my Dear <:3", {
                     timeout: 7000,
                 })
