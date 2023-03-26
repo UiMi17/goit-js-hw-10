@@ -12,9 +12,9 @@ const countryInfoBox = document.querySelector('.country-info');
 userInput.addEventListener(
   'input',
   _.debounce(ev => {
-    const inputValue = ev.target.value;
+    const inputValue = ev.target.value.trim();
 
-    if (inputValue.trim() !== '') {
+    if (inputValue !== '') {
       fetchCountries(inputValue)
         .then(data => {
           if (data.status === 404) {
@@ -69,3 +69,4 @@ userInput.addEventListener(
     }
   }, DEBOUNCE_DELAY)
 );
+
