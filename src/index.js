@@ -58,16 +58,10 @@ userInput.addEventListener(
                 )}</span></p>`;
             });
             countryInfoBox.innerHTML = countryInfoTemplate.join('');
-
-            if (userInput.value.toLowerCase() === "armenia") {
-                Notiflix.Notify.warning("Hello, my Dear <:3", {
-                    timeout: 7000,
-                })
-            }
           }
         })
         .catch(error => {
-          Notiflix.Notify.failure(error.message); 
+          Notiflix.Notify.failure(error.message);
         });
     } else {
       countryList.innerHTML = '';
