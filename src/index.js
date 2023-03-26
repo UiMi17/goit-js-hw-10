@@ -48,7 +48,7 @@ userInput.addEventListener(
               }" width="270" height="150">
                 <h1 class="country-info__name">${country.name.official}</h1>
                 <p class="country-info__capital">Capital: <span class="text">${country.capital.join(
-                  ','
+                  ', '
                 )}</span></p>
                 <p class="country-info__population">Population: <span class="text">${
                   country.population
