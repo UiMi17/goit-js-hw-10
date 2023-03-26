@@ -40,3 +40,11 @@ ul {
   align-items: center;
   gap: 10px;
 }
+
+.country-info p {
+  font-weight: 700;
+}
+
+.country-info span {
+  font-weight: 400;
+}

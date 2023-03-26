@@ -29,7 +29,7 @@ userInput.addEventListener(
             );
             return;
           } else if (countriesArrayLength >= 2 && countriesArrayLength <= 10) {
-            countryInfoBox.innerHTML = ""
+            countryInfoBox.innerHTML = '';
             const countryListTemplate = data.map(country => {
               return `<li class="country-list__item">
             <img src="${country.flags.svg}" alt="${country.flags.alt}" width="30" height="24">
@@ -38,14 +38,14 @@ userInput.addEventListener(
             });
             countryList.innerHTML = countryListTemplate.join('');
           } else {
-            countryList.innerHTML = ""
+            countryList.innerHTML = '';
             let languageObj = data[0].languages;
             let languageArr = Object.values(languageObj);
 
             const countryInfoTemplate = data.map(country => {
               return `<img src="${country.flags.svg}" alt="${
                 country.flags.alt
-              }" width="30" height="24">
+              }" width="270" height="150">
                 <h1 class="country-info__name">${country.name.official}</h1>
                 <p class="country-info__capital">Capital: <span class="text">${country.capital.join(
                   ','
@@ -58,14 +58,20 @@ userInput.addEventListener(
                 )}</span></p>`;
             });
             countryInfoBox.innerHTML = countryInfoTemplate.join('');
+
+            if (userInput.value.toLowerCase() === "armenia") {
+                Notiflix.Notify.warning("Hello, my Dear <:3", {
+                    timeout: 7000,
+                })
+            }
           }
-        }).catch((error) => {
-            Notiflix.Notify.failure(error.message)
         })
+        .catch(error => {
+          Notiflix.Notify.failure(error.message);
+        });
     } else {
       countryList.innerHTML = '';
       countryInfoBox.innerHTML = '';
     }
   }, DEBOUNCE_DELAY)
 );
-
